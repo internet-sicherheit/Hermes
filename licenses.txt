@@ -1,0 +1,21 @@
+Hermes Malware Analysis System uses the following third party libraries under their own licenses:
+
+Foundation Zurb - MIT License - https://github.com/zurb/foundation/blob/master/LICENSE
+Grails - Apache License - http://grails.org/License
+JQuery & JQuery UI - MIT License - https://jquery.org/license/
+DataTables - GPL2 - https://datatables.net/license_gpl2
+Dynatree - MIT License - https://code.google.com/p/dynatree/
+Flot - MIT License - https://code.google.com/p/flot/
+Modernizr - MIT License - http://modernizr.com/license/
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+Hermes Malware Analysis System uses the following third party graphics:
+
+"World of Copland: 2", by The Iconfactory- Freeware Non-commercial - http://findicons.com/icon/148180/coffee_maker?id=148231 (05-08-2014)
+"Free icons for Windows8/Metro", by VisualPharm - Creative Commons Attribution - http://findicons.com/icon/558639/empty_filter?id=560759 (05-08-2014)
+"Running icon", by VisualPharm - Creative Commons Attribution-No Derivative Works 3.0 Unported - https://www.iconfinder.com/icons/172541/running_icon#size=128 (05-08-2014)
+"Finish flag goal icon", by VisualPharm - Creative Commons Attribution-No Derivative Works 3.0 Unported - https://www.iconfinder.com/icons/172465/finish_flag_goal_icon#size=128 (05-08-2014)
+"Stopwatch icon", by VisualPharm - Creative Commons Attribution-No Derivative Works 3.0 Unported - https://www.iconfinder.com/icons/172560/stopwatch_icon#size=128 (05-08-2014)
