@@ -8,3 +8,5 @@ The Job and Node class are the central classes of Hermes. A Job object is the re
 The user interface of Hermes is a custom developed content management system (CMS). The CMS is splitted into security-, information, administration- and api-component. The administration-component is used for CRUD operations on the domain objects. The security-component manages Role-Based-Access-Control (RBAC).
 
 It is also possible to monitor the cuckoo nodes and their status. This functionality is realised by the information-component. It shows the node cpu usage as well as the status of the current job.
+
+Hermes was developed as part of http://www.ites-project.org/
