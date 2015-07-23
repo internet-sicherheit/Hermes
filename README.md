@@ -11,9 +11,9 @@ It is also possible to monitor the cuckoo nodes and their status. This functiona
 
 Hermes was developed as part of http://www.ites-project.org/
 
-# Building the Sources
+## Building the Sources
 
-## Database
+### Database
 Hermes uses PostgreSQL as database backend. You may change this on your demand.
 
 Because the unit test will also use PostgreSQL by default, please use it for development. Here we recommend to use the 'library/postgres' Docker container.
@@ -26,7 +26,7 @@ After the container has started, connect to the DBMS and add the role 'hermes' w
 
 To configure PostgreSQL a bit easier we recommend the PgAdminIII [PgAdmin3](http://www.pgadmin.org/) tool.
 
-## Build
+### Build
 Requirements: You should have gradle in version 2.4 installed!
 
 Yust switch to the sources folder and call:
