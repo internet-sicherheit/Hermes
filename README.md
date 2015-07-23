@@ -10,3 +10,24 @@ The user interface of Hermes is a custom developed content management system (CM
 It is also possible to monitor the cuckoo nodes and their status. This functionality is realised by the information-component. It shows the node cpu usage as well as the status of the current job.
 
 Hermes was developed as part of http://www.ites-project.org/
+
+# Building the Sources
+
+## Database
+Hermes uses PostgreSQL as database backend. You may change this on your demand.
+
+Because the unit test will also use PostgreSQL by default, please use it for development. Here we recommend to use the 'library/postgres' Docker container.
+
+To use it just run:
+
+`docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -p 127.0.0.1:5432:5432 -d postgres`
+
+After the container has started, connect to the DBMS and add the role 'hermes' with password 'pinguin' and create a database named 'hermesTest' with that user as owner. This is the default configuration of the sourcen and will allow you to run the tests. 
+
+To configure PostgreSQL a bit easier we recommend the PgAdminIII [PgAdmin3](http://www.pgadmin.org/) tool.
+
+## Build
+Requirements: You should have gradle in version 2.4 installed!
+
+Yust switch to the sources folder and call:
+`gradle build` 
