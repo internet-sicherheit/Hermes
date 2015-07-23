@@ -29,5 +29,5 @@ To configure PostgreSQL a bit easier we recommend the PgAdminIII [PgAdmin3](http
 ### Build
 Requirements: You should have gradle in version 2.4 installed!
 
-Yust switch to the sources folder and call:
+Switch to the sources folder and call:
 `gradle build` 
