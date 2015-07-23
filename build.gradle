@@ -1,0 +1,79 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+buildscript {
+    ext {
+        springBootVersion = '1.2.4.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE")
+        classpath('org.springframework:springloaded:1.2.3.RELEASE')
+    }
+}
+
+war {
+    baseName = 'Hermes'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+}
+
+compileJava {
+    options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
+
+dependencies {
+
+    compile("com.vaadin:vaadin-spring-boot-starter:1.0.0.beta3")
+    compile("org.codehaus.groovy:groovy-all:2.4.3")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.spockframework:spock-spring:1.0-groovy-2.4")
+    compile('org.springframework.boot:spring-boot-starter-web:1.2.4.RELEASE')
+
+    //compile("org.springframework.boot:spring-boot-starter-security")
+    
+    // Runtimes
+    runtime("com.h2database:h2")
+    runtime("org.postgresql:postgresql:9.4-1201-jdbc41")
+
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    testCompile("org.springframework.boot:spring-boot-starter-test") 
+}
+
+dependencyManagement {
+	imports { 
+		mavenBom "com.vaadin:vaadin-bom:7.4.5" 
+	}
+}
+
+eclipse {
+    classpath {
+         containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+         containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
