@@ -20,7 +20,9 @@ Because the unit test will also use PostgreSQL by default, please use it for dev
 
 To use it just run:
 
-`docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -p 127.0.0.1:5432:5432 -d postgres`
+```bash
+docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -p 127.0.0.1:5432:5432 -d postgres
+```
 
 After the container has started, connect to the DBMS and add the role 'hermes' with password 'pinguin' and create a database named 'hermesTest' with that user as owner. This is the default configuration of the sourcen and will allow you to run the tests. 
 
