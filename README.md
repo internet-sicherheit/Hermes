@@ -26,6 +26,24 @@ docker run --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgr
 
 After the container has started, connect to the DBMS and add the role 'hermes' with password 'pinguin' and create a database named 'hermesTest' with that user as owner. This is the default configuration of the sourcen and will allow you to run the tests. 
 
+Create user:
+```
+CREATE ROLE hermes LOGIN
+  ENCRYPTED PASSWORD 'md57badeb1c8e627a59f446c4fa981dc9b7'
+  NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
+```
+
+Create database:
+```
+CREATE DATABASE "hermesTest"
+  WITH OWNER = hermes
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'en_US.utf8'
+       LC_CTYPE = 'en_US.utf8'
+       CONNECTION LIMIT = -1;
+```
+
 To configure PostgreSQL a bit easier we recommend the PgAdminIII [PgAdmin3](http://www.pgadmin.org/) tool.
 
 ### Build
